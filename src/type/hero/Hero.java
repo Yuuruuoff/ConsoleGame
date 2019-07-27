@@ -2,11 +2,18 @@ package type.hero;
 
 import Engine.Console;
 
-public class Hero {
+public abstract class Hero {
 
     private Integer hp;
     private Integer damage;
+    private HeroTypeEnum heroType;
 
+    Hero() {
+    }
+
+    Hero(HeroTypeEnum heroType) {
+        this.heroType = heroType;
+    }
 
     protected void initHero(Integer hp, Integer damage) {
         this.hp = hp;
@@ -30,8 +37,20 @@ public class Hero {
         this.damage = damage;
     }
 
-    public void makeDamage(Integer a) {
-        hp = hp - a;
+    public void getDmgFrom(Hero a) {
+        hp -= a.getDamage();
+        if (hp <= 0) {
+            hp = 0;
+        }
+        Console.formattedOutput(a.heroType.toString() + " нанес урон " + this.heroType.toString() + " и теперь его здоровье : " + this.getHp());
+
+
+    }
+
+    public Boolean isAlive() {
+        return getHp() > 0;
+
+
     }
 
     public void outputFormattedHp() {

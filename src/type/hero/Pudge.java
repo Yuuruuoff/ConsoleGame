@@ -1,9 +1,13 @@
 package type.hero;
 
+import Engine.PropertiesReader;
+
 public class Pudge extends Hero {
+    private Integer hp;
 
     public Pudge(){
-        initHero(1000,80);
+        super(HeroTypeEnum.PUDGE);
+        initHero(PropertiesReader.getPropertyAsInteger("hero.pudge.hp"), PropertiesReader.getPropertyAsInteger("hero.pudge.dmg"));
     }
 
 

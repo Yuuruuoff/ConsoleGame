@@ -1,0 +1,9 @@
+hero.pudge.hp =1200
+hero.pudge.dmg = 100
+hero.riki.hp = 650
+hero.riki.dmg = 235
+hero.axe.hp = 1500
+hero.axe.dmg = 80
+hero.enemy.hp = 1000
+hero.enemy.dmg = 100
+file.logging = src/Engine/logs.txt

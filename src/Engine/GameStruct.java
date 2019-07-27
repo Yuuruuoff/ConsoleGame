@@ -1,9 +1,6 @@
 package Engine;
 
-import type.hero.Axe;
-import type.hero.Hero;
-import type.hero.Pudge;
-import type.hero.Riki;
+import type.hero.*;
 
 public class GameStruct {
 
@@ -22,23 +19,43 @@ public class GameStruct {
         pers2 = choose();
         pers2.outputFormattedHp();
         pers2.outputFormattedDmg();
+        fightLogic();
 
+    }
+
+
+    private void fightLogic() {
+        while (pers.isAlive() && pers2.isAlive()) {
+            pers.getDmgFrom(pers2);
+            if (pers.isAlive()) {
+                pers2.getDmgFrom(pers);
+            }
+
+
+        }
 
     }
 
     private Hero choose() {
-        Console.formattedOutput("паджер рики акс");
-        String choose = Console.readLoweredString();
-        switch (choose) {
-            case "паджер":
-                return new Pudge();
-            case "рики":
-                return new Riki();
-            case "акс":
-                return new Axe();
-            default:
-                Console.formattedOutput("ГЫГЫ");
-                return choose();
+        Console.formattedOutput(HeroTypeEnum.getAllHeroes());
+        String choose = Console.readUpperString();
+
+        if (HeroTypeEnum.PUDGE.toString().equals(choose)) {
+            return new Pudge();
+        } else if (HeroTypeEnum.AXE.toString().equals(choose)) {
+            return new Axe();
+        } else if (HeroTypeEnum.RIKI.toString().equals(choose)) {
+            return new Riki();
+        } else {
+            return choose();
         }
+//        HeroTypeEnum heroTypeEnum;
+//        try{
+//            heroTypeEnum = HeroTypeEnum.valueOf(choose);
+//        }catch (IllegalArgumentException ex){
+//            return choose();
+//        }
     }
+
+
 }
