@@ -8,8 +8,6 @@ import java.nio.file.Path;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
-
-
 public class PropertiesReader {
 
     private static Map<String, String> properties = new HashMap<>();
