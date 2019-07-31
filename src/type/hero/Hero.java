@@ -60,5 +60,12 @@ public abstract class Hero {
     public void outputFormattedDmg() {
         Console.formattedOutput("Атака: " + damage);
     }
+
+    @Override
+    public int hashCode() {
+        return hp.hashCode() + damage.hashCode() + heroType.hashCode();
+    }
+
+
 }
 
