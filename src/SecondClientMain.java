@@ -17,7 +17,7 @@ public class SecondClientMain {
 
 
         System.out.println(in.readLine());
-        System.out.println(in.readLine());
+//        System.out.println(in.readLine());
         socket.close();
 
 

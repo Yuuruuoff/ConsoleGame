@@ -15,8 +15,8 @@ public class ClientMain {
         BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
         PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
 
-        System.out.println(in.readLine());
-        out.println("попытка раз");
+//        System.out.println(in.readLine());
+//        out.println("попытка раз");
 
 
         socket.close();

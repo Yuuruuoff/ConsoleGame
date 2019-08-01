@@ -15,7 +15,7 @@ public class Console {
             System.err.println("Unable to initialize writer");
         }
     }
-
+    private static ServerSocketClass serverSocketClass = new ServerSocketClass();
     public static Scanner sc = new Scanner(System.in);
 
     public static String readLoweredString(){
@@ -27,7 +27,9 @@ public class Console {
     }
 
     public static void formattedOutput(String s) {
+
         String output = new Date() + " : " + s;
+        serverSocketClass.out.println(output);
         System.out.println(output);
         try {
             writer.append(output).append("\n");

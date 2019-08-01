@@ -7,11 +7,10 @@ import java.io.IOException;
 public class Main {
 
     public static void main(String[] args) throws IOException {
+        new PropertiesReader("src/Engine/test.txt");
         ServerSocketClass server = new ServerSocketClass();
         server.ServerSocketStruct();
-        //        new PropertiesReader("src/Engine/test.txt");
-//        GameStruct gameStruct = new GameStruct();
-//        gameStruct.game();
+
 
     }
 }
